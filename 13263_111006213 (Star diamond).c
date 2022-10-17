@@ -1,32 +1,29 @@
 #include<stdio.h>
-int main()
-{
-    int a,b;
-    scanf("%d", &a);
-    b=a;
-    b%=2;
-    if(b==0){
-        printf("Stop drawing fake diamonds!\n");
-    }
-    else if(b!=0){
-        for (int c=1; c<=a; c+=2){
-            for(int d=c; d<a; d+=2){
-                printf(" ");
-            }
-            for (int e=1;e<=c;e++){
-                printf("*");
-            }
-            printf("\n");
+int main(){
+int a,b,c,d;
+scanf("%d", &a);
+if(a%2==0){
+    printf("Stop drawing shitty drawings!\n");
+}
+else{
+    for(b=1; b<=(a/2)+1; b++){
+        for(c=1; c<=(a/2)+1-b; c++){
+            printf(" ");
         }
-        for(int c=a-2;c>=0;c-=2){
-            for(int d=a;d>c;d-=2){
-                printf(" ");
-            }
-            for (int e=1;e<=c; e++){
-                printf("*");
-            }
-            printf("\n");
+        for(d=1; d<=(b*2)-1; d++){
+            printf("*");
         }
+        printf("\n");
     }
+    for(b=1; b<=a/2; b++){
+        for(c=1; c<=b; c++){
+            printf(" ");
+        }
+        for(d=1; d<=a-(b*2); d++){
+            printf("*");
+        }
+        printf("\n");
+    }
+}
 return 0;
 }
